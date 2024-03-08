@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/app.css">
+    <title>Boggle Game</title>
+</head>
+<body>
+    <main id = "boggle">
+
+        <table class = "make-board">
+            <tbody>
+                {% for row in board %}
+                    <tr>
+                        {% for letter in row %}
+                            <td> {{letter}}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <p>High Score: 
+            <b>{{ highscore }}</b> in {{ nplays }} plays
+        </p>
+    
+        <p>
+            Score: <b class="score">0</b>
+        </p>
+
+        <p>
+            Seconds Left: <b class="timer"></b>
+        </p>
+
+        <form class= "submit-word">
+            <input name="word" class ='word' placeholder="Insert Word" autofocus>
+            <button>Submit</button>
+        </form>
+
+        <p class = "message">
+            <!-- where a message is added via JavaScript-->
+        </p>
+        <ul class = "accepted-words">
+            <!-- displaying words that were accepted via JavaScript -->
+        </ul>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/static/app.js"></script>
+    <script> let game = new MakeBoggle("boggle", 60)</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+
+.make-board td{
+    display: table-cell;
+    width: 30px;
+    text-align: center;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    font-size: 2rem;
+    padding: 2px;
+}
